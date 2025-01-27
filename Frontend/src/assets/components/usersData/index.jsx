@@ -34,7 +34,7 @@ const Home = () => {
     fetchUserdata();
   }, []);
   const fetchUserdata = async () => {
-    const usersData = await fetch(`${process.env.API }/coustomerTable`);
+    const usersData = await fetch(`${import.meta.env.VITE_API }/coustomerTable`);
     const data = await usersData.json();
     setuserData(data.data);
   };
@@ -49,7 +49,7 @@ const Home = () => {
     }
 
     const data = await fetch(
-      `${process.env.API}/deleteCoustomer/${eachUser.id}`,
+      `${import.meta.env.VITE_API}/deleteCoustomer/${eachUser.id}`,
       {
         method: "DELETE",
       }

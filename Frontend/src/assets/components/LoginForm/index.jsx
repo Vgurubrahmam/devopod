@@ -40,7 +40,7 @@ const LoginForm = () => {
   const submitForm = async (event) => {
     event.preventDefault();
     const userDetails = { email, password };
-    const url = process.env.API + `/userLogin`;
+    const url = `${import.meta.env.VITE_API}/userLogin`;
     const options = {
       method: 'POST',
       headers: {

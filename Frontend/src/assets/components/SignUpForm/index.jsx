@@ -37,7 +37,7 @@ useEffect(()=>{
   const submitForm = async (event) => {
     event.preventDefault();
     const userDetails = { username, password, email };
-    const url = process.env.API + `/userRegister`;
+    const url = `${import.meta.env.VITE_API}/userRegister`;
     const options = {
       method: 'POST',
       headers: {

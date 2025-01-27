@@ -18,7 +18,7 @@ const UpdateLead = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `${process.env.API}/getSingleCoustomer/${userId}`
+          `${import.meta.env.VITE_API}/getSingleCoustomer/${userId}`
         );
         const data = await response.json();
         
@@ -51,7 +51,7 @@ const UpdateLead = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.API}/updateCoustomerData/${userId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API}/updateCoustomerData/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
