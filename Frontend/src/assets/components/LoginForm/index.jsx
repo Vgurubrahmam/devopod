@@ -40,7 +40,7 @@ const LoginForm = () => {
   const submitForm = async (event) => {
     event.preventDefault();
     const userDetails = { email, password };
-    const url = 'http://localhost:3000/userLogin';
+    const url = process.env.API + `/userLogin`;
     const options = {
       method: 'POST',
       headers: {

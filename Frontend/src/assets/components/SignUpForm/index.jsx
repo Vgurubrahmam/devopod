@@ -37,7 +37,7 @@ useEffect(()=>{
   const submitForm = async (event) => {
     event.preventDefault();
     const userDetails = { username, password, email };
-    const url = 'http://localhost:3000/userRegister';
+    const url = process.env.API + `/userRegister`;
     const options = {
       method: 'POST',
       headers: {

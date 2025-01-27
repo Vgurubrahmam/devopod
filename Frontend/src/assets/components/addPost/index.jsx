@@ -28,7 +28,7 @@ const AddPost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/addLeaddata", {
+      const response = await fetch(`${process.env.API}/addLeaddata`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

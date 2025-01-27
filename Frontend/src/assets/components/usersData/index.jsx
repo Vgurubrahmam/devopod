@@ -34,7 +34,7 @@ const Home = () => {
     fetchUserdata();
   }, []);
   const fetchUserdata = async () => {
-    const usersData = await fetch("http://localhost:3000/coustomerTable");
+    const usersData = await fetch(`${process.env.API }/coustomerTable`);
     const data = await usersData.json();
     setuserData(data.data);
   };
@@ -49,7 +49,7 @@ const Home = () => {
     }
 
     const data = await fetch(
-      `http://localhost:3000/deleteCoustomer/${eachUser.id}`,
+      `${process.env.API}/deleteCoustomer/${eachUser.id}`,
       {
         method: "DELETE",
       }

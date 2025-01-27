@@ -18,7 +18,7 @@ const UpdateLead = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/getSingleCoustomer/${userId}`
+          `${process.env.API}/getSingleCoustomer/${userId}`
         );
         const data = await response.json();
         
@@ -51,7 +51,7 @@ const UpdateLead = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/updateCoustomerData/${userId}`, {
+      const response = await fetch(`${process.env.API}/updateCoustomerData/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
